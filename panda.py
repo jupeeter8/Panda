@@ -42,7 +42,7 @@ def panda(current_peice, grid):
         return []
 
 
-key_press = [pygame.K_w, pygame.K_a, pygame.K_d, pygame.K_s]
+'''key_press = [pygame.K_w, pygame.K_a, pygame.K_d, pygame.K_s]
 
 
 def ai_run():
@@ -55,4 +55,4 @@ def ai_run():
         return [e]
 
     else:
-        return []
+        return []'''

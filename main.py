@@ -164,29 +164,13 @@ def valid(shape, grid):
     return True
 
 
-def lines(n):
-    if n == 0:
+def lines(start_x):
         for i in range(20):
-            pygame.draw.line(screen, (128, 128, 128), (500, origin_y + i * bs),
-                             (500 + game_window_x, origin_y + i * bs))
+            pygame.draw.line(screen, (214, 214, 214), (start_x, origin_y + i * bs),
+                             (start_x + game_window_x, origin_y + i * bs))
         for j in range(10):
-            pygame.draw.line(screen, (128, 128, 128), (500 + j * bs, origin_y),
-                             (500 + j * bs, origin_y + game_window_y))
-    elif n == 1:
-        for i in range(20):
-            pygame.draw.line(screen, (214, 214, 214), (origin_x, origin_y + i * bs),
-                             (origin_x + game_window_x, origin_y + i * bs))
-
-        for j in range(10):
-            pygame.draw.line(screen, (214, 214, 214), (origin_x + j * bs, origin_y),
-                             (origin_x + j * bs, origin_y + game_window_y))
-
-        for i in range(20):
-            pygame.draw.line(screen, (214, 214, 214), (850, origin_y + i * bs),
-                             (850 + game_window_x, origin_y + i * bs))
-        for j in range(10):
-            pygame.draw.line(screen, (214, 214, 214), (850 + j * bs, origin_y),
-                             (850 + j * bs, origin_y + game_window_y))
+            pygame.draw.line(screen, (214, 214, 214), (start_x + j * bs, origin_y),
+                             (start_x + j * bs, origin_y + game_window_y))
 
 
 def row_clear(grid, lp):
@@ -361,7 +345,8 @@ def ai():
 
         draw_window(grid, origin_x)
         draw_window(grid_ai, 850)
-        lines(1)
+        lines(origin_x)
+        lines(850)
         if not play:
             draw_lost(210)
         if not ai_play:
